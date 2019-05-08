@@ -1,0 +1,22 @@
+<h1 class="col-12 text-center">LOGIN</h1>
+<div class="row">
+  <div class="col-md-6 mx-auto m-2">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <div class="form_group">
+        <%= f.label :email %></br>
+        <%= f.email_field :email, class: 'form_control' %></br>
+      </div>
+
+      <div class="form_group">
+        <%= f.label :password %></br>
+        <%= f.password_field :password %> </br>
+        <%= link_to "(forgot password)", new_password_reset_path %>
+      </div>
+
+      <div class="actions mt-2">
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      </div>
+      <div class="text-center">New User? <%= link_to 'Sign up now', sign_up_path %> </div>
+    <% end %>
+  </div>
+</div>
